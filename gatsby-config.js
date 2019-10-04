@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Dean's Website`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Dean Dowd, Portland UX Designer`,
+    description: `The home of Dean Dowd, UX Designer in Porland, Oregon. Here you will find my work, my writings about User Experience, work, leadership, productivity and hopefully some recreational, random life stuff.`,
     author: `@deand`,
   },
   plugins: [

@@ -11,9 +11,9 @@ const IndexPage = () => (
     <div>
       <div className="Hero">
         <div className="HeroGroup">
-          <h1>Hi people</h1>
-          <p>Welcome to your new Gatsby site.</p>
-          <p>Now go build something great.</p>
+          <h1>Good day to you!</h1>
+          <p>Welcome to the website of Dean Dowd. I'm a UX Designer living around Portland, Oregon. Here you'll find samples of my work aside my musings about User Experience, leadership, productivity and hopefully some recreational, random life stuff. </p>
+          <p>Welcome to my show, kick back and enjoy.</p>
           <a>Watch the Video</a>
         </div>
       </div>
