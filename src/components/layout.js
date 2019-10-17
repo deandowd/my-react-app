@@ -16,6 +16,9 @@ const Layout = ({ children, data }) => (
     />
     <Header />
     {children()}
+    {data.allContentfulLink.edges.map(edge => (
+      <a href={edge.node.url}>{edge.node.title}</a>
+    ))}
     <Footer data={data}>
       Backgrounds made in Cinema 4D, iOS app in Swift, site in React. <a href="mailto:support@designcode.io">Email us</a> to ask anything. © 2018
     </Footer>
@@ -37,12 +40,11 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
+    allContentfulLink {
       edges {
         node {
           title
           url
-          createdAt
         }
       }
     }
