@@ -6,6 +6,7 @@ import Wave from '../components/Wave'
 import staticdata from '../../staticdata.json'
 import Cell from '../components/Cell'
 import styled from 'styled-components';
+import Layout from '../layouts/layout';
 
 const SectionCaption = styled.p`
   font-weight: 600;
@@ -26,8 +27,8 @@ const SectionCellGroup = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `
-
 const IndexPage = () => (
+  
   <div>
     <div className="Hero">
       <div className="HeroGroup">
@@ -51,24 +52,24 @@ const IndexPage = () => (
         <Card 
           title="Design System"
           text="10 sections"
-          image='/images/wallpaper.jpg' />
+          image={require('../images/wallpaper.jpg')} />
         <Card 
           title="React for Designers"
           text="12 sections"
-          image='/images/wallpaper2.jpg' />
+          image={require('../images/wallpaper2.jpg')} />
         <Card 
           title="Sound Design"
           text="5 sections"
-          image='/images/wallpaper3.jpg' />
+          image={require('../images/wallpaper3.jpg')} />
         <Card 
           title="ARKit 2"
           text="10 sections"
-          image='/images/wallpaper4.jpg' />
+          image={require('../images/wallpaper4.jpg')} />
       </div>
     </div>
     <Section
-      image='/images/wallpaper2.jpg'
-      logo='/images/logo-react.png'
+      image={require('../images/wallpaper2.jpg')}
+      logo={require('../images/logo-react.png')}
       title="React for Designers"
       text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, Grid CSS, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
      />
@@ -80,7 +81,9 @@ const IndexPage = () => (
           image={cell.image} />
       ))}
      </SectionCellGroup>
+     
   </div>
+  
 )
 
 export default IndexPage

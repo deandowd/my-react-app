@@ -1,17 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import Header from '../components/header'
-import '../components/layout.css'
-import Footer from '../components/Footer';
+import Footer from '../components/Footer'
+import './layout.css';
 
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: data.site.siteMetadata.description },
-        { name: 'keywords', content: data.site.siteMetadata.keywords },
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, keywords'},
       ]}
     />
     <Header />
@@ -19,7 +20,7 @@ const Layout = ({ children, data }) => (
     {data.allContentfulLink.edges.map(edge => (
       <a href={edge.node.url}>{edge.node.title}</a>
     ))}
-    <Footer data={data}>
+    <Footer links={data.allContentfulLink.edges}>
       Backgrounds made in Cinema 4D, iOS app in Swift, site in React. <a href="mailto:support@designcode.io">Email us</a> to ask anything. © 2018
     </Footer>
   </div>
@@ -40,11 +41,12 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulLink {
+    allContentfulLink(sort: { fields: [createdAt], order: ASC }) {
       edges {
         node {
           title
           url
+          createdAt
         }
       }
     }
